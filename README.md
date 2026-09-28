@@ -1,5 +1,10 @@
 # RiceClipper
 
+> **This repository is archived and no longer maintained.** RiceClipper is now
+> the `clipper/` pillar of [RiceSuite](https://github.com/gidde032/RiceSuite).
+> All new work, fixes, and Issues go there. The code here is the final
+> standalone version. It still runs, but it gets no fixes.
+
 Turns short (**under ~1 minute**) vertical or landscape videos into post-ready clips with
 **word-synced burned-in captions** and an **on-screen header**.
 
@@ -8,11 +13,28 @@ It is the render chassis for a larger clipping concept ("Path 3"): no clip
 It is a standalone project, distinct from **RicePoster** (the posting harness),
 with an implemented local-filesystem handoff that RicePoster can pull from.
 
-> **Status: v1 slice implemented; hardening, bounded visual presets, Slate UI,
-> fixed lyric-caption presets, and Wave-1 auto-header complete.** End-to-end rendering and shutdown
-> cleanup are verified with a libass-enabled ffmpeg. The design is recorded in
-> [`SPEC.md`](./SPEC.md). Burn-in requires an ffmpeg with libass (see setup) —
-> the stock Homebrew formula omits it.
+> **Status:** final standalone version. It is v1.0.0 plus the untagged changes
+> in [`CHANGELOG.md`](./CHANGELOG.md) under `[Unreleased]`. Development
+> continues in RiceSuite.
+
+## Move to RiceSuite
+
+Install and run RiceClipper per the
+[RiceSuite README](https://github.com/gidde032/RiceSuite#readme). The libass
+ffmpeg requirement still applies (see [Requirements](#requirements) below).
+
+Config variables keep their names and now go in RiceSuite's `ricesuite.env`
+(copy `ricesuite.env.example`). The handoff directories keep the same
+defaults (`~/ricesearcher-handoff` and `~/riceclipper-handoff`). RiceSuite
+sets `RICECLIPPER_SEARCHER_INBOX` itself, so leave it unset.
+
+RiceSuite's Clipper keeps its `.riceclipper_work/` cache inside its own
+`clipper/` checkout, not this one. **Finish or render in-flight jobs in this
+checkout before you switch** — they do not carry over to RiceSuite.
+
+Stop this app first. RiceSuite's `rice` command refuses to start while
+anything answers on the old ports (8765 RiceSearcher / 8000 RiceClipper /
+1738 RicePoster).
 
 ## What it does (v1)
 
@@ -312,8 +334,9 @@ clearing, API error-state cleanup, and semaphore-free transcription shutdown.
 
 ## Docs
 
+- [RiceSuite](https://github.com/gidde032/RiceSuite) — active development
 - [`SPEC.md`](./SPEC.md) — the ratified v1 design and decision log
-- [`ROADMAP.md`](./ROADMAP.md) — what's after v1 and in what order
+- [`ROADMAP.md`](./ROADMAP.md) — frozen; planned work moves to RiceSuite
 - [`SECURITY.md`](./SECURITY.md) — privacy, secrets, and what leaves your machine
 - [`CLAUDE.md`](./CLAUDE.md) — rules and context for agent sessions
 

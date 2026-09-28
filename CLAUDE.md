@@ -1,5 +1,8 @@
 # CLAUDE.md — operating context for RiceClipper
 
+**This repository is archived. Do no work here.** Work happens in RiceSuite's
+`clipper/` pillar: https://github.com/gidde032/RiceSuite
+
 This file orients an AI agent session working in this repository. Read it before
 acting.
 

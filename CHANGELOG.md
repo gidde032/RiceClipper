@@ -5,6 +5,12 @@ All notable changes to RiceClipper are recorded here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project aims to follow [Semantic Versioning](https://semver.org/).
 
+## Deprecated
+
+This repository is frozen and archived. Development continues in RiceSuite's
+`clipper/` pillar. The items below under `[Unreleased]` were never tagged
+here; they ship only as part of RiceSuite.
+
 ## [Unreleased]
 
 ### Changed

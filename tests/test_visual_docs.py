@@ -14,10 +14,10 @@ def test_spec_records_the_bounded_visual_preset_contract():
     assert "user-authored preset persistence" in spec
 
 
-def test_roadmap_keeps_custom_preset_work_deferred():
+def test_roadmap_is_frozen_and_points_to_ricesuite():
     roadmap = _normalized_doc("ROADMAP.md")
-    assert "eleven caption presets and three header treatments" in roadmap
-    assert "persistent saved presets remain deferred" in roadmap
+    assert "**Frozen.**" in roadmap
+    assert "https://github.com/gidde032/RiceSuite/issues" in roadmap
 
 
 def test_editor_reference_keeps_narrow_text_panes_above_ratified_minimum():
