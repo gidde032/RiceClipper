@@ -24,17 +24,19 @@ Install and run RiceClipper per the
 ffmpeg requirement still applies (see [Requirements](#requirements) below).
 
 Config variables keep their names and now go in RiceSuite's `ricesuite.env`
-(copy `ricesuite.env.example`). The handoff directories keep the same
-defaults (`~/ricesearcher-handoff` and `~/riceclipper-handoff`). RiceSuite
+(copy `ricesuite.env.example`). RiceSuite finds existing handoff directories
+at their old defaults (`~/ricesearcher-handoff` and `~/riceclipper-handoff`)
+and uses them in place. To move them under `~/.ricesuite`, follow the
+[data migration guide](https://github.com/gidde032/RiceSuite/blob/main/docs/data-migration.md). A fresh install uses `~/.ricesuite` from the start. RiceSuite
 sets `RICECLIPPER_SEARCHER_INBOX` itself, so leave it unset.
 
-RiceSuite's Clipper keeps its `.riceclipper_work/` cache inside its own
-`clipper/` checkout, not this one. **Finish or render in-flight jobs in this
-checkout before you switch** — they do not carry over to RiceSuite.
+RiceSuite does not read this checkout's `.riceclipper_work/`. **Finish or
+render in-flight jobs in this checkout before you switch.** They do not carry
+over to RiceSuite.
 
 Stop this app first. RiceSuite's `rice` command refuses to start while
-anything answers on the old ports (8765 RiceSearcher / 8000 RiceClipper /
-1738 RicePoster).
+anything answers on this app's port or the other legacy ports (8765 / 8000 /
+1738). A legacy app started by mistake could otherwise write to the same data.
 
 ## What it does (v1)
 
