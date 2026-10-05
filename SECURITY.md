@@ -1,5 +1,9 @@
 # Security & Privacy
 
+**No version of this repository is supported.** Report vulnerabilities to
+[RiceSuite's Issues](https://github.com/gidde032/RiceSuite/issues) instead.
+Do not post secrets or credentials in a public Issue.
+
 RiceClipper is a **local-first** tool. It runs on your machine, reads local
 video files, and writes local output files. It does **not** post, publish, or
 upload content anywhere. This document explains what leaves your machine (and

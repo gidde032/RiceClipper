@@ -19,6 +19,9 @@ block until protection can be created.
 
 ## How to apply it
 
+This repository is archived; do not apply this ruleset. The steps below are
+kept only as a historical record.
+
 Once the repo is on GitHub Pro (or made public):
 
 ```sh
